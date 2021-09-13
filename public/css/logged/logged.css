@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+  :root {
+    --color-font: black;
+    --color-strong:#37294E;
+    --color-light: #9B95A7;
+    --color-gray: #C4C4C4;
+  }
+
+  body {
+    font-family: "Nova Flat";
+    width: cover;
+    margin: 0 auto;
+    background-color: black;
+    
+  }
+
+
+  header {
+    display: grid;
+    height: 75px;
+    grid-template-columns: max-content auto;
+    border-bottom: 0.8rem solid var(--color-strong);
+    border: #37294E solid;
+    background-color: #37294E;
+  }
+  header section {
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    background-color: #37294E;
+  }
+  header section h1 {
+    margin: 0 1.5rem;
+    background-color: #37294E;
+  }
+  
+  
+  header section picture {
+    margin-left:16px;
+    display: flex;
+    flex-direction: row;
+    background-color: #37294E;
+  }
+  header section picture img {
+    width: 100%;
+    background-color: #37294E;
+  }
+  
+  header div {
+    display: flex;
+    position: relative;
+    align-content: stretch;
+    align-items: center;
+    justify-content: flex-end;
+    border: 1px solid #9B95A7 ;
+    background-color: #37294E;
+    box-sizing: border-box;
+    margin: auto;
+    left:-90px;
+    
+  }
+  header div a {
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    padding-left:230px;
+    width: 550px;
+    height: 36px;
+    color: var(--color-font);
+    background-color: #605380;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 14px;
+    color: #131313;
+    left:0px;
+  }
+  
+  main{
+      background-color: #C4C4C4;
+      padding: 40px;
+      width: 790px;
+      height: 949px;
+      margin: auto;
+  }
+  
+  main h1{
+      padding: 0;
+      margin: 0;
+      outline: 0;
+      text-transform: uppercase;
+      font-size: 30px;
+      line-height: 36px;
+      text-align: center;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: underline;
+      background-color:#C4C4C4;
+  }
+  
+  main h4{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+  }
+  
+  header div a:hover {
+    text-decoration: none;
+  }
+
+  .bg-backgroundlogin{
+    background-color: black;
+  }
+
+  .bg-login {
+    background-color: var(--color-gray);
+    
+  }
+  .bg-button {
+    background-color: var(--color-strong);
+  }
