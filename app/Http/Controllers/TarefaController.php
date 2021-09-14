@@ -43,8 +43,8 @@ class TarefaController extends Controller
             'nometarefa' => 'required|max:255',
             'data' => 'required|max:255',
             'descricao' => 'required|max:255',
-          ]);
-          if ($validated) {
+        ]);
+        if ($validated) {
             $tarefa = new Tarefa();
             $tarefa->user_id = $request->get('user_id');
             $tarefa->nometarefa = $request->get('nometarefa');
@@ -52,7 +52,7 @@ class TarefaController extends Controller
             $tarefa->descricao = $request->get('descricao');
             $tarefa->save();
             return redirect("tarefa");
-          }
+        }
     }
 
     /**
@@ -74,7 +74,8 @@ class TarefaController extends Controller
      */
     public function edit(Tarefa $tarefa)
     {
-        //
+        $users = User::all();
+        return view("logged/tarefa/edit", compact('users', 'tarefa'));
     }
 
     /**
@@ -86,7 +87,20 @@ class TarefaController extends Controller
      */
     public function update(Request $request, Tarefa $tarefa)
     {
-        //
+        $validated = $request->validate([
+            'user_id' => 'required|integer',
+            'nometarefa' => 'required|max:255',
+            'data' => 'required|max:255',
+            'descricao' => 'required|max:255',
+        ]);
+        if ($validated) {
+            $tarefa->user_id = $request->get('user_id');
+            $tarefa->nometarefa = $request->get('nometarefa');
+            $tarefa->data = $request->get('data');
+            $tarefa->descricao = $request->get('descricao');
+            $tarefa->save();
+            return redirect("tarefa");
+        }
     }
 
     /**
@@ -97,6 +111,7 @@ class TarefaController extends Controller
      */
     public function destroy(Tarefa $tarefa)
     {
-        //
+        $tarefa->delete();
+        return redirect("tarefa");
     }
 }

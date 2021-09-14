@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Usuário</th>
       <th>Nome da Tarefa</th>
       <th>Data</th>
       <th>Descrição</th>
@@ -16,7 +15,6 @@
   <tbody>
     @foreach($tarefas as $tarefa)
     <tr>
-      <td>{{$tarefa->user->name}}</td>
       <td>{{$tarefa->nometarefa}}</td>
       <td>{{$tarefa->data}}</td>
       <td>{{$tarefa->descricao}}</td>

@@ -24,3 +24,4 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::resource("/tarefa", TarefaController::class);
 });
+
