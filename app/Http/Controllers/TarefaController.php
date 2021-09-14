@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tarefa;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TarefaController extends Controller
@@ -14,9 +15,8 @@ class TarefaController extends Controller
      */
     public function index()
     {
-        return view("logged/tarefa");
-        //$nome = array("nome"=>"Eduardo")
-        //return view("initial/inicio", $nome)
+        $tarefas = Tarefa::all();
+        return view("logged/tarefa", compact('tarefas'));
     }
 
     /**
@@ -26,7 +26,8 @@ class TarefaController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all();
+        return view("logged/tarefa/create", compact('users'));
     }
 
     /**
@@ -37,7 +38,21 @@ class TarefaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'user_id' => 'required|integer',
+            'nometarefa' => 'required|max:255',
+            'data' => 'required|max:255',
+            'descricao' => 'required|max:255',
+          ]);
+          if ($validated) {
+            $tarefa = new Tarefa();
+            $tarefa->user_id = $request->get('user_id');
+            $tarefa->nometarefa = $request->get('nometarefa');
+            $tarefa->data = $request->get('data');
+            $tarefa->descricao = $request->get('descricao');
+            $tarefa->save();
+            return redirect("tarefa");
+          }
     }
 
     /**

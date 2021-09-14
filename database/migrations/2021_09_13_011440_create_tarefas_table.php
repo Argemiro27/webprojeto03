@@ -17,7 +17,7 @@ class CreateTarefasTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()
                 ->onDelete('cascade')->onUpdate('cascade');
-            $table->string('agenda');
+            $table->string('nometarefa');
             $table->string('data');
             $table->string('descricao');
             $table->timestamps();
