@@ -23,5 +23,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
       })->name('dashboard');
 
     Route::resource("/tarefa", TarefaController::class);
+    Route::resource("/agenda", AgendaController::class);
 });
 
